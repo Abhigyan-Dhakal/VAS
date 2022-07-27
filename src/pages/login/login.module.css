@@ -1,0 +1,53 @@
+.form-container {
+  background-color: white;
+  max-width: 540px;
+  width: 100%;
+  padding: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 5px;
+  margin-bottom: 14px;
+  outline: none;
+}
+
+.login-input:focus {
+  border: 1px solid rgb(164, 37, 180);
+  transition: all 0.2s ease-in-out;
+}
+
+.login-title {
+  color: rgb(164, 37, 180);
+}
+
+.label-container {
+  margin-bottom: 6px;
+}
+
+.label-container label {
+  color: rgb(125, 125, 125);
+}
+
+.login-btn {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(164, 37, 180);
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: rgb(142, 34, 156);
+}
+
+.login-btn:active {
+  background-color: rgb(116, 28, 128);
+}
