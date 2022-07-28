@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../context";
-// import { Auth, AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context";
+import { Auth, AuthContext, useAuth } from "../../context/AuthContext";
 import styles from "./login.module.css";
 
 type Props = {};
@@ -11,8 +11,8 @@ interface ILoginData {
 }
 
 export const Login: React.FC<Props> = ({}: Props) => {
-  // const { setLoggedIn } = useContext(AuthContext) as Auth;
-  // const context = useContext(AuthContext);
+  const { loggedIn, setLoggedIn } = useAuth();
+  console.log(loggedIn);
 
   const [loginData, setLoginData] = useState<ILoginData>({
     email: "",
@@ -21,7 +21,7 @@ export const Login: React.FC<Props> = ({}: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // setLoggedIn(true);
+    setLoggedIn(true);
     console.log(loginData);
   };
 
@@ -72,5 +72,3 @@ export const Login: React.FC<Props> = ({}: Props) => {
     </div>
   );
 };
-
-// export default Login;

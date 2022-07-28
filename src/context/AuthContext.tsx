@@ -1,5 +1,11 @@
-import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
-import { createContext } from "react";
+import React, {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+  createContext,
+  useContext,
+} from "react";
 
 export interface Auth {
   loggedIn: boolean;
@@ -21,4 +27,6 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
   );
 };
 
-// const useAuthContext = () => useContext(AuthContext);
+export const useAuth = () => {
+  return useContext(AuthContext) as Auth;
+};
