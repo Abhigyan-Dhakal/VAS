@@ -41,6 +41,9 @@ export const ManagerAppointmentForm = (props: Props) => {
 
   return (
     <div className={Styles.appointmentFormContainer}>
+      <div>
+        <h1 className={Styles.heading}>Create Appointment</h1>
+      </div>
       <Form
         {...layout}
         name="nest-messages"
