@@ -5,10 +5,10 @@
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   background-color: rgb(240, 240, 240);
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
