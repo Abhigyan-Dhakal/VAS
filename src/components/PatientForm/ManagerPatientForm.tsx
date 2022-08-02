@@ -8,10 +8,14 @@ import {
   InputNumber,
   Select,
   Radio,
+  Upload,
+  message,
 } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { setPatientData } from "../../redux/slices/patientFormSlice";
 import { RootState } from "../../redux";
+import { UploadOutlined } from "@ant-design/icons";
+import type { UploadProps } from "antd";
 
 const { Option } = Select;
 
@@ -44,6 +48,24 @@ export const ManagerPatientForm = (props: Props) => {
 
   const onFinish = (values: any) => {
     dispatch(setPatientData(values));
+  };
+
+  const uploadProps: UploadProps = {
+    name: "file",
+    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+    headers: {
+      authorization: "authorization-text",
+    },
+    onChange(info) {
+      if (info.file.status !== "uploading") {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === "done") {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === "error") {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
   };
 
   return (
@@ -180,6 +202,11 @@ export const ManagerPatientForm = (props: Props) => {
             ]}
           >
             <Input size="large" />
+          </Form.Item>
+          <Form.Item name="documentImage" label="Document Image">
+            <Upload {...uploadProps}>
+              <Button icon={<UploadOutlined />}>Click to Upload</Button>
+            </Upload>
           </Form.Item>
           <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
             <Button type="primary" htmlType="submit" block>
