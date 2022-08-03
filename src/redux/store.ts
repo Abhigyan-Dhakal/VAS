@@ -1,9 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import appointmentFormReducer from "./slices/appointmentFormSlice";
 import patientFormReducer from "./slices/patientFormSlice";
+import registrationFormReducer from "./slices/registrationFormSlice";
 
 export const store = configureStore({
-  reducer: { appointmentFormReducer, patientFormReducer },
+  reducer: {
+    appointmentFormReducer,
+    patientFormReducer,
+    registrationFormReducer,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
