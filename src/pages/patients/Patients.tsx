@@ -1,10 +1,11 @@
 import { List } from "antd";
 import React from "react";
-import Styles from "./PatientList.module.css";
+import Styles from "./Patients.module.css";
+import { Button } from "antd";
 
 type Props = {};
 
-export const PatientList = (props: Props) => {
+export const Patients = (props: Props) => {
   const editHandler = () => {};
   const deleteHandler = () => {};
 
@@ -32,7 +33,18 @@ export const PatientList = (props: Props) => {
         <List
           className="demo-loadmore-list"
           itemLayout="horizontal"
-          header={<h1>Patient's List</h1>}
+          header={
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <h1>Patient's List</h1>
+              <Button type="primary">Create New Patient</Button>
+            </div>
+          }
           dataSource={data}
           renderItem={(item) => (
             <div className={Styles.listItem}>

@@ -4,7 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ManagerAppointmentForm, ManagerPatientForm } from "./components";
 import { AuthProvider } from "./context";
 import { BasicLayout } from "./layout/BasicLayout";
-import { About, Home, Login, Register } from "./pages";
+import { About, Home, Login, Patients, Register } from "./pages";
 import { store } from "./redux";
 
 const App = () => {
@@ -24,8 +24,10 @@ const App = () => {
                   element={<ManagerAppointmentForm />}
                 />
                 <Route path="patient-form" element={<ManagerPatientForm />} />
+                <Route path="patients" element={<Patients />} />
               </Route>
               <Route path="register" element={<Register />} />
+
               <Route path="*" element={<div>Error 404! Page Not found</div>} />
             </Routes>
           </BrowserRouter>
