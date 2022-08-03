@@ -4,7 +4,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ManagerAppointmentForm, ManagerPatientForm } from "./components";
 import { AuthProvider } from "./context";
 import { About, Home, Login } from "./pages";
-import { PatientList } from "./pages/patientList/PatientList";
 import { store } from "./redux";
 
 const App = () => {
