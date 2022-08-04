@@ -4,7 +4,15 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ManagerAppointmentForm, ManagerPatientForm } from "./components";
 import { AuthProvider } from "./context";
 import { BasicLayout } from "./layout/BasicLayout";
-import { About, Home, Login, Patients, Register } from "./pages";
+import {
+  About,
+  Home,
+  Login,
+  Patients,
+  Register,
+  VaccineForm,
+  Vaccines,
+} from "./pages";
 import { store } from "./redux";
 
 const App = () => {
@@ -25,6 +33,8 @@ const App = () => {
                 />
                 <Route path="patient-form" element={<ManagerPatientForm />} />
                 <Route path="patients" element={<Patients />} />
+                <Route path="vaccines" element={<Vaccines />} />
+                <Route path="vaccine-form" element={<VaccineForm />} />
               </Route>
               <Route path="register" element={<Register />} />
 

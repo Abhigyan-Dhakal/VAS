@@ -1,0 +1,14 @@
+.vaccineFormContainer {
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  max-width: 550px;
+  width: 100%;
+}
+
+.heading {
+  color: rgb(164, 37, 180);
+  text-align: center;
+  margin-bottom: 28px;
+}
