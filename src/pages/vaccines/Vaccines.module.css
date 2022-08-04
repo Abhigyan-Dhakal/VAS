@@ -1,3 +1,14 @@
+/* .listContainer {
+  max-width: 800px;
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px 40px;
+}
+
+.listItem {
+  border-top: 1px solid rgb(221, 221, 221);
+} */
+
 .patientContainer {
   max-width: 1200px;
   margin: 0px auto;
