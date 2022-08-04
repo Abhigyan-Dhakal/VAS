@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import appointmentFormReducer from "./slices/appointmentFormSlice";
 import patientFormReducer from "./slices/patientFormSlice";
 import registrationFormReducer from "./slices/registrationFormSlice";
+import vaccineFormReducer from "./slices/vaccineFormSlice";
 
 export const store = configureStore({
   reducer: {
     appointmentFormReducer,
     patientFormReducer,
     registrationFormReducer,
+    vaccineFormReducer,
   },
 });
 
