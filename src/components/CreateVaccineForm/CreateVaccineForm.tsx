@@ -9,12 +9,21 @@ import {
   Radio,
   Select,
 } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { setVaccineData } from "../../redux/slices/vaccineFormSlice";
+import { RootState } from "../../redux";
 
 type Props = {};
 
 const { Option } = Select;
 
 export const CreateVaccineForm = (props: Props) => {
+  const data = useSelector((state: RootState) => {
+    return state.vaccineFormReducer.data;
+  });
+
+  const dispatch = useDispatch();
+
   const layout = {
     labelCol: {
       span: 8,
@@ -34,8 +43,7 @@ export const CreateVaccineForm = (props: Props) => {
   /* eslint-enable no-template-curly-in-string */
 
   const onFinish = (values: any) => {
-    // dispatch(setAppointmentData(values));
-    console.log(values);
+    dispatch(setVaccineData(values));
   };
 
   return (
@@ -103,12 +111,20 @@ export const CreateVaccineForm = (props: Props) => {
           ]}
         >
           <Radio.Group>
-            <Radio value="male">Single</Radio>
-            <Radio value="female">Multiple</Radio>
+            <Radio value="single">Single</Radio>
+            <Radio value="multiple">Multiple</Radio>
           </Radio.Group>
         </Form.Item>
-        <Form.Item name="duration" label="Duration (In hrs)">
-          <InputNumber min={1} max={12} defaultValue={1} size="large" />
+        <Form.Item
+          name="duration"
+          label="Duration (In hrs)"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <InputNumber min={1} max={12} size="large" />
         </Form.Item>
         <Form.Item
           name="gender"
@@ -134,7 +150,7 @@ export const CreateVaccineForm = (props: Props) => {
             },
           ]}
         >
-          <InputNumber min={3} max={100} size="large" />
+          <InputNumber min={0} max={100} size="large" />
         </Form.Item>
         <Form.Item
           name="ethnicity"
